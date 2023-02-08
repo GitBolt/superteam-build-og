@@ -21,6 +21,7 @@ const convert = async (svg: string) => {
 
 app.get('/idea', async(req: any, res: any) => {
     const {title, description, author} = req.query
+    console.log("new fetch", title, description, author)
     if (!title || !description || !author) return
     try {
         const svgObj = OGSVG(title, description, author)
